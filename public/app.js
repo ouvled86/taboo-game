@@ -2,7 +2,7 @@
 (function () {
     'use strict';
 
-    const socket = io({ path: '/taboo/socket.io' });
+    const socket = io();
 
     // ─── DOM References ──────────────────────────────────────
     const screens = {
