@@ -1,0 +1,302 @@
+[
+    {
+        "word": "Pizza",
+        "forbidden": [
+            "cheese",
+            "dough",
+            "oven",
+            "Italian",
+            "slice"
+        ]
+    },
+    {
+        "word": "Beach",
+        "forbidden": [
+            "sand",
+            "ocean",
+            "swim",
+            "sun",
+            "wave"
+        ]
+    },
+    {
+        "word": "Guitar",
+        "forbidden": [
+            "strings",
+            "music",
+            "play",
+            "instrument",
+            "rock"
+        ]
+    },
+    {
+        "word": "Hospital",
+        "forbidden": [
+            "doctor",
+            "nurse",
+            "sick",
+            "medicine",
+            "emergency"
+        ]
+    },
+    {
+        "word": "Airplane",
+        "forbidden": [
+            "fly",
+            "pilot",
+            "wing",
+            "sky",
+            "airport"
+        ]
+    },
+    {
+        "word": "Library",
+        "forbidden": [
+            "book",
+            "read",
+            "quiet",
+            "shelf",
+            "borrow"
+        ]
+    },
+    {
+        "word": "Birthday",
+        "forbidden": [
+            "cake",
+            "candle",
+            "party",
+            "gift",
+            "age"
+        ]
+    },
+    {
+        "word": "Football",
+        "forbidden": [
+            "goal",
+            "kick",
+            "ball",
+            "team",
+            "field"
+        ]
+    },
+    {
+        "word": "Camera",
+        "forbidden": [
+            "photo",
+            "picture",
+            "lens",
+            "click",
+            "film"
+        ]
+    },
+    {
+        "word": "Rainbow",
+        "forbidden": [
+            "color",
+            "rain",
+            "sun",
+            "arc",
+            "sky"
+        ]
+    },
+    {
+        "word": "Chocolate",
+        "forbidden": [
+            "sweet",
+            "cocoa",
+            "candy",
+            "brown",
+            "milk"
+        ]
+    },
+    {
+        "word": "Dinosaur",
+        "forbidden": [
+            "extinct",
+            "fossil",
+            "reptile",
+            "jurassic",
+            "bones"
+        ]
+    },
+    {
+        "word": "Wedding",
+        "forbidden": [
+            "bride",
+            "groom",
+            "ring",
+            "ceremony",
+            "marry"
+        ]
+    },
+    {
+        "word": "Volcano",
+        "forbidden": [
+            "lava",
+            "erupt",
+            "mountain",
+            "hot",
+            "ash"
+        ]
+    },
+    {
+        "word": "Penguin",
+        "forbidden": [
+            "bird",
+            "ice",
+            "Antarctica",
+            "cold",
+            "tuxedo"
+        ]
+    },
+    {
+        "word": "Telescope",
+        "forbidden": [
+            "star",
+            "space",
+            "look",
+            "lens",
+            "sky"
+        ]
+    },
+    {
+        "word": "Pirate",
+        "forbidden": [
+            "ship",
+            "treasure",
+            "sea",
+            "parrot",
+            "sword"
+        ]
+    },
+    {
+        "word": "Dentist",
+        "forbidden": [
+            "teeth",
+            "drill",
+            "mouth",
+            "cavity",
+            "chair"
+        ]
+    },
+    {
+        "word": "Jungle",
+        "forbidden": [
+            "trees",
+            "animals",
+            "tropical",
+            "wild",
+            "forest"
+        ]
+    },
+    {
+        "word": "Skateboard",
+        "forbidden": [
+            "wheels",
+            "ride",
+            "trick",
+            "board",
+            "park"
+        ]
+    },
+    {
+        "word": "Astronaut",
+        "forbidden": [
+            "space",
+            "moon",
+            "rocket",
+            "NASA",
+            "suit"
+        ]
+    },
+    {
+        "word": "Spaghetti",
+        "forbidden": [
+            "pasta",
+            "Italy",
+            "noodle",
+            "sauce",
+            "boil"
+        ]
+    },
+    {
+        "word": "Umbrella",
+        "forbidden": [
+            "rain",
+            "wet",
+            "handle",
+            "open",
+            "cover"
+        ]
+    },
+    {
+        "word": "Lighthouse",
+        "forbidden": [
+            "light",
+            "sea",
+            "ship",
+            "coast",
+            "tower"
+        ]
+    },
+    {
+        "word": "Magician",
+        "forbidden": [
+            "magic",
+            "trick",
+            "hat",
+            "wand",
+            "rabbit"
+        ]
+    },
+    {
+        "word": "Sunflower",
+        "forbidden": [
+            "yellow",
+            "seed",
+            "sun",
+            "plant",
+            "tall"
+        ]
+    },
+    {
+        "word": "Karate",
+        "forbidden": [
+            "martial",
+            "kick",
+            "belt",
+            "fight",
+            "Japanese"
+        ]
+    },
+    {
+        "word": "Compass",
+        "forbidden": [
+            "north",
+            "direction",
+            "navigate",
+            "needle",
+            "map"
+        ]
+    },
+    {
+        "word": "Snowman",
+        "forbidden": [
+            "snow",
+            "carrot",
+            "cold",
+            "winter",
+            "scarf"
+        ]
+    },
+    {
+        "word": "Hammock",
+        "forbidden": [
+            "hang",
+            "relax",
+            "sleep",
+            "tree",
+            "swing"
+        ]
+    }
+]

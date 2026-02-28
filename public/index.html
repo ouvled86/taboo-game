@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Taboo Team — تابو</title>
+    <meta name="description" content="Multiplayer Taboo word game with Moroccan Darija support">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+Arabic:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- ─── LOBBY SCREEN ───────────────────────────── -->
+    <div id="screen-lobby" class="screen active">
+        <div class="lobby-container">
+            <div class="logo-section">
+                <div class="logo-icon">🚫</div>
+                <h1 class="logo-title">TABOO<span class="logo-accent">TEAM</span></h1>
+                <p class="logo-subtitle">تابو — لعبة الكلمات الممنوعة</p>
+            </div>
+
+            <div class="glass-card">
+                <div class="input-group">
+                    <label for="player-name">Your Name</label>
+                    <input type="text" id="player-name" placeholder="اسمك / Your name" maxlength="20"
+                        autocomplete="off">
+                </div>
+
+                <div class="language-toggle">
+                    <label>Language</label>
+                    <div class="toggle-group">
+                        <button class="toggle-btn active" data-lang="darija">🇲🇦 دارجة</button>
+                        <button class="toggle-btn" data-lang="english">🇬🇧 English</button>
+                    </div>
+                </div>
+
+                <button id="btn-create" class="btn btn-primary btn-large">
+                    <span class="btn-icon">🎮</span> Create Room
+                </button>
+
+                <div class="divider"><span>OR</span></div>
+
+                <div class="input-group">
+                    <label for="room-code-input">Room Code</label>
+                    <input type="text" id="room-code-input" placeholder="ABCD" maxlength="4" autocomplete="off"
+                        style="text-transform: uppercase; text-align: center; letter-spacing: 0.3em; font-size: 1.5rem;">
+                </div>
+
+                <button id="btn-join" class="btn btn-secondary btn-large">
+                    <span class="btn-icon">🚪</span> Join Room
+                </button>
+            </div>
+
+            <p class="footer-text">Built for 42 Inception • Multiplayer Word Game</p>
+        </div>
+    </div>
+
+    <!-- ─── TEAMS SCREEN ───────────────────────────── -->
+    <div id="screen-teams" class="screen">
+        <div class="teams-container">
+            <div class="room-header">
+                <div class="room-code-display">
+                    <span class="room-label">ROOM CODE</span>
+                    <span id="display-room-code" class="room-code-value">ABCD</span>
+                </div>
+                <div class="language-badge" id="lang-badge">🇲🇦 دارجة</div>
+            </div>
+
+            <div class="teams-grid">
+                <div class="team-card team-a" id="team-a-card">
+                    <h2 class="team-name">TEAM <span class="team-letter">A</span></h2>
+                    <ul id="team-a-list" class="player-list"></ul>
+                    <button class="btn btn-team-a" data-team="A">Join Team A</button>
+                </div>
+
+                <div class="vs-divider">VS</div>
+
+                <div class="team-card team-b" id="team-b-card">
+                    <h2 class="team-name">TEAM <span class="team-letter">B</span></h2>
+                    <ul id="team-b-list" class="player-list"></ul>
+                    <button class="btn btn-team-b" data-team="B">Join Team B</button>
+                </div>
+            </div>
+
+            <div id="unassigned-section" class="unassigned-section">
+                <h3>Waiting to join a team:</h3>
+                <ul id="unassigned-list" class="player-list horizontal"></ul>
+            </div>
+
+            <button id="btn-start" class="btn btn-primary btn-large btn-start" style="display:none;">
+                <span class="btn-icon">⚡</span> Start Game!
+            </button>
+        </div>
+    </div>
+
+    <!-- ─── GAME SCREEN ────────────────────────────── -->
+    <div id="screen-game" class="screen">
+        <div class="game-container">
+            <div class="game-header">
+                <div class="score-board">
+                    <div class="score team-a-score">
+                        <span class="score-label">TEAM A</span>
+                        <span id="score-a" class="score-value">0</span>
+                    </div>
+                    <div class="timer-display">
+                        <div class="timer-ring" id="timer-ring">
+                            <svg viewBox="0 0 100 100">
+                                <circle class="timer-bg" cx="50" cy="50" r="45" />
+                                <circle class="timer-progress" id="timer-progress" cx="50" cy="50" r="45" />
+                            </svg>
+                            <span id="timer-text" class="timer-text">60</span>
+                        </div>
+                    </div>
+                    <div class="score team-b-score">
+                        <span class="score-label">TEAM B</span>
+                        <span id="score-b" class="score-value">0</span>
+                    </div>
+                </div>
+                <div class="round-info">
+                    <span id="round-display">Round 1 / 4</span>
+                    <span class="turn-indicator" id="turn-indicator">Team A's Turn</span>
+                </div>
+            </div>
+
+            <!-- Describer View -->
+            <div id="describer-view" class="card-area" style="display:none;">
+                <div class="word-card" id="word-card">
+                    <div class="word-card-header">DESCRIBE THIS WORD</div>
+                    <div class="target-word" id="target-word">أتاي</div>
+                    <div class="forbidden-section">
+                        <div class="forbidden-header">🚫 FORBIDDEN WORDS</div>
+                        <ul id="forbidden-list" class="forbidden-list"></ul>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button id="btn-correct" class="btn btn-correct">✅ Got It!</button>
+                    <button id="btn-skip" class="btn btn-skip">⏭️ Skip</button>
+                </div>
+            </div>
+
+            <!-- Guesser View (same team) -->
+            <div id="guesser-view" class="card-area" style="display:none;">
+                <div class="waiting-card">
+                    <div class="waiting-icon">🎯</div>
+                    <h2>Listen & Guess!</h2>
+                    <p id="describer-name-display">Your teammate is describing...</p>
+                    <p class="hint-text">Shout out your guesses!</p>
+                </div>
+            </div>
+
+            <!-- Opposing Team View -->
+            <div id="opponent-view" class="card-area" style="display:none;">
+                <div class="waiting-card opponent-card">
+                    <div class="waiting-icon">👀</div>
+                    <h2>Watch for Taboo Words!</h2>
+                    <p>If the describer says a forbidden word, press the button!</p>
+                    <button id="btn-taboo" class="btn btn-taboo">🚫 TABOO!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ─── ROUND RESULT SCREEN ────────────────────── -->
+    <div id="screen-result" class="screen">
+        <div class="result-container">
+            <h2 class="result-title">Round Over!</h2>
+            <div class="result-scores">
+                <div class="result-team team-a-result">
+                    <span class="result-team-name">TEAM A</span>
+                    <span id="result-score-a" class="result-score">0</span>
+                </div>
+                <div class="result-vs">—</div>
+                <div class="result-team team-b-result">
+                    <span class="result-team-name">TEAM B</span>
+                    <span id="result-score-b" class="result-score">0</span>
+                </div>
+            </div>
+            <p id="result-round-info" class="result-info">Next: Team B's turn</p>
+            <button id="btn-next-round" class="btn btn-primary btn-large" style="display:none;">
+                <span class="btn-icon">▶️</span> Next Round
+            </button>
+        </div>
+    </div>
+
+    <!-- ─── GAME OVER SCREEN ───────────────────────── -->
+    <div id="screen-gameover" class="screen">
+        <div class="gameover-container">
+            <div class="trophy-icon" id="trophy-icon">🏆</div>
+            <h1 id="winner-text" class="winner-text">Team A Wins!</h1>
+            <div class="final-scores">
+                <div class="final-team">
+                    <span class="final-label">TEAM A</span>
+                    <span id="final-score-a" class="final-score">0</span>
+                </div>
+                <div class="final-dash">—</div>
+                <div class="final-team">
+                    <span class="final-label">TEAM B</span>
+                    <span id="final-score-b" class="final-score">0</span>
+                </div>
+            </div>
+            <button id="btn-play-again" class="btn btn-primary btn-large" style="display:none;">
+                <span class="btn-icon">🔄</span> Play Again
+            </button>
+        </div>
+    </div>
+
+    <!-- ─── TOAST NOTIFICATIONS ─────────────────────── -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- ─── TABOO FLASH OVERLAY ─────────────────────── -->
+    <div id="taboo-flash" class="taboo-flash">
+        <span>🚫 TABOO!</span>
+    </div>
+
+    <script src="socket.io/socket.io.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
